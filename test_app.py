@@ -5,5 +5,5 @@ def test_hello():
     assert response.status_code == 200
     assert (
             b'Hello CI/CD!' in response.data
-            )
+            
 
