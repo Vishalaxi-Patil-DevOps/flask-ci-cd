@@ -1,5 +1,9 @@
 pipeline {
-    agent any 
+    agent any
+
+    triggers {
+        pollSCM('H/1 * * * *) 
+     }
     
     environment {
         IMAGE_NAME = "flask-ci-cd"
