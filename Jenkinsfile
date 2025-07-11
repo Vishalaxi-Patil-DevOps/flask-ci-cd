@@ -19,7 +19,7 @@ pipeline {
                  }
               }
          }
-         stage("Run Container') {
+         stage('Run Container') {
             steps {
                sh "docker stop ${IMAGE_NAME} || true"
                sh "docker rm ${IMAGE_MAME} || true"
