@@ -23,7 +23,7 @@ pipeline {
          stage('Run Container') {
             steps {
              // sh "docker stop ${IMAGE_NAME} || true"
-               sh "docker rm ${IMAGE_MAME} || true"
+               sh "docker rm ${IMAGE_NAME} || true"
                sh "docker run -d -p 5000:5000 --name ${IMAGE_NAME} ${DOCKER_IMAGE}"
 }
 }
