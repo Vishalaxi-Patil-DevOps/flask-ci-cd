@@ -1,7 +1,7 @@
 pipeline {
     agent any 
     
-    enviornmnet {
+    environment {
         IMAGE_NAME = "flask-ci-cd"
         DOCKER_IMAGE = "flask-ci-cd-latest"
                  }
@@ -19,5 +19,6 @@ pipeline {
                  }
               }
          }
+}
 
 
