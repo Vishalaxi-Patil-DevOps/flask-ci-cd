@@ -3,7 +3,8 @@ pipeline {
     
     environment {
         IMAGE_NAME = "flask-ci-cd"
-        DOCKER_IMAGE = "flask-ci-cd-latest"
+        IMAGE_TAG = "${BUILD_NUMBER}"
+        DOCKER_IMAGE = "${IMAGE_NAME}:${IMAGE_TAG}"
                  }
     stages {
         stage('Clone') {
@@ -14,7 +15,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                     docker.build("${IMAGE_NAME}", ".")
+                     docker.build("${IMAGE_NAME}:${IMAGE_TAG}", ".")
                     }
                  }
               }
